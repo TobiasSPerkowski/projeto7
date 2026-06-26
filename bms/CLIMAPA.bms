@@ -1,0 +1,77 @@
+PRINT NOGEN
+
+CLIMAPA DFHMSD TYPE=&SYSPARM,
+               MODE=INOUT,
+               LANG=COBOL,
+               TIOAPFX=YES
+
+CLI01   DFHMDI SIZE=(24,80)
+
+         DFHMDF POS=(2,20),
+               LENGTH=22,
+               INITIAL='CONSULTA DE CLIENTES',
+               ATTRB=PROT
+
+         DFHMDF POS=(5,5),
+               LENGTH=15,
+               INITIAL='Codigo Cliente:',
+               ATTRB=PROT
+
+CODCLI   DFHMDF POS=(5,25),
+                LENGTH=6,
+                ATTRB=(UNPROT,NUM)
+
+         DFHMDF POS=(7,5),
+               LENGTH=15,
+               INITIAL='Nome..........:',
+               ATTRB=PROT
+
+NOME     DFHMDF POS=(7,25),
+                LENGTH=30,
+                ATTRB=PROT
+
+         DFHMDF POS=(9,5),
+               LENGTH=15,
+               INITIAL='Telefone......:',
+               ATTRB=PROT
+
+TELEFON  DFHMDF POS=(9,25),
+                LENGTH=15,
+                ATTRB=UNPROT
+
+         DFHMDF POS=(11,5),
+               LENGTH=15,
+               INITIAL='Cidade........:',
+               ATTRB=PROT
+
+CIDADE   DFHMDF POS=(11,25),
+                LENGTH=20,
+                ATTRB=UNPROT
+
+         DFHMDF POS=(13,5),
+               LENGTH=15,
+               INITIAL='Mensagem......:',
+               ATTRB=PROT
+
+MSG      DFHMDF POS=(13,25),
+                LENGTH=40,
+                ATTRB=PROT
+
+         DFHMDF POS=(20,5),
+               LENGTH=8,
+               INITIAL='PF3=Sair',
+               ATTRB=PROT
+
+         DFHMDF POS=(21,5),
+               LENGTH=13,
+               INITIAL='PF5=Consultar',
+               ATTRB=PROT
+
+         DFHMDF POS=(22,5),
+               LENGTH=10,
+               INITIAL='PF6=Salvar',
+               ATTRB=PROT
+
+         DFHMDI TYPE=FINAL
+         DFHMSD TYPE=FINAL
+         END
